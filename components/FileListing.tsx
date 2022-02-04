@@ -340,16 +340,16 @@ const FileListing: FC<{ query?: ParsedUrlQuery }> = ({ query }) => {
         <div className="dark:bg-gray-900 dark:text-gray-100 bg-white rounded">
           <div className="dark:border-gray-500/30 grid items-center grid-cols-12 px-3 space-x-2 border-b border-gray-900/10">
             <div className="md:col-span-6 col-span-12 font-bold py-2 text-gray-600 dark:text-gray-300 uppercase tracking-widest text-xs">
-              Name
+              名称
             </div>
             <div className="md:block hidden col-span-3 font-bold text-gray-600 dark:text-gray-300 uppercase tracking-widest text-xs">
-              Last Modified
+              修改日期
             </div>
             <div className="md:block hidden font-bold text-gray-600 dark:text-gray-300 uppercase tracking-widest text-xs">
-              Size
+              大小
             </div>
             <div className="md:block hidden font-bold text-gray-600 dark:text-gray-300 uppercase tracking-widest text-xs">
-              Actions
+              操作
             </div>
             <div className="md:block hidden font-bold text-gray-600 dark:text-gray-300 uppercase tracking-widest text-xs">
               <div className="md:flex dark:text-gray-400 hidden p-1.5 text-gray-700">
