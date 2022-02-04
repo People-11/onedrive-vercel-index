@@ -98,7 +98,7 @@ function SearchResultItemTemplate({
           <div className="text-sm font-medium leading-8">{driveItem.name}</div>
           <div
             className={`text-xs font-mono opacity-60 truncate overflow-hidden ${
-              itemDescription === 'Loading ...' && 'animate-pulse'
+              itemDescription === '加载中…' && 'animate-pulse'
             }`}
           >
             {itemDescription}
@@ -199,11 +199,11 @@ export default function SearchModal({
                   type="text"
                   id="search-box"
                   className="w-full bg-transparent focus:outline-none focus-visible:outline-none"
-                  placeholder="Search ..."
+                  placeholder="搜索…"
                   value={query}
                   onChange={e => setQuery(e.target.value)}
                 />
-                <div className="px-2 py-1 rounded-lg bg-gray-200 dark:bg-gray-700 font-medium text-xs">ESC</div>
+                {/*<div className="px-2 py-1 rounded-lg bg-gray-200 dark:bg-gray-700 font-medium text-xs">ESC</div>*/}
               </Dialog.Title>
 
               <div
@@ -213,16 +213,16 @@ export default function SearchModal({
                 {results.loading && (
                   <div className="text-center px-4 py-12 text-sm font-medium">
                     <LoadingIcon className="animate-spin w-4 h-4 mr-2 inline-block svg-inline--fa" />
-                    <span>Loading ...</span>
+                    <span>加载中…</span>
                   </div>
                 )}
                 {results.error && (
-                  <div className="text-center px-4 py-12 text-sm font-medium">Error: {results.error.message}</div>
+                  <div className="text-center px-4 py-12 text-sm font-medium">错误： {results.error.message}</div>
                 )}
                 {results.result && (
                   <>
                     {results.result.length === 0 ? (
-                      <div className="text-center px-4 py-12 text-sm font-medium">Nothing here.</div>
+                      <div className="text-center px-4 py-12 text-sm font-medium">无结果</div>
                     ) : (
                       results.result.map(result => <SearchResultItem key={result.id} result={result} />)
                     )}

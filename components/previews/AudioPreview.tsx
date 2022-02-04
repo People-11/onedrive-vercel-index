@@ -27,7 +27,7 @@ const AudioPreview: FC<{ file: OdFileObject }> = ({ file }) => {
               <LoadingIcon className="inline-block h-5 w-5 animate-spin" />
             ) : (
               <FontAwesomeIcon
-                className={`h-5 w-5 ${playerStatus === PlayerState.Playing ? 'animate-spin' : ''}`}
+                className={`h-5 w-5 ${playerStatus === PlayerState.Playing ? 'animate-none' : ''}`}
                 icon="music"
                 size="2x"
               />

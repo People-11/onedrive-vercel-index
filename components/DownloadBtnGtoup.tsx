@@ -68,9 +68,9 @@ const DownloadButtonGroup: React.FC<{ downloadUrl: string }> = ({ downloadUrl })
       <DownloadButton
         onClickCallback={() => window.open(downloadUrl)}
         btnColor="blue"
-        btnText="Download"
+        btnText="下载"
         btnIcon="file-download"
-        btnTitle="Download the file directly through OneDrive"
+        btnTitle="直接下载文件"
       />
       {/* <DownloadButton
         onClickCallback={() => window.open(`/api/proxy?url=${encodeURIComponent(downloadUrl)}`)}
@@ -85,9 +85,9 @@ const DownloadButtonGroup: React.FC<{ downloadUrl: string }> = ({ downloadUrl })
           toast.success('Copied direct link to clipboard.')
         }}
         btnColor="pink"
-        btnText="Copy direct link"
+        btnText="复制链接"
         btnIcon="copy"
-        btnTitle="Copy the permalink to the file to the clipboard"
+        btnTitle="复制下载链接"
       />
     </div>
   )

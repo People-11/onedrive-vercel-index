@@ -41,7 +41,7 @@ const VideoPreview: React.FC<{ file: OdFileObject }> = ({ file }) => {
           <DownloadButton
             onClickCallback={() => window.open(file['@microsoft.graph.downloadUrl'])}
             btnColor="blue"
-            btnText="Download"
+            btnText="下载"
             btnIcon="file-download"
           />
           {/* <DownloadButton
@@ -55,18 +55,18 @@ const VideoPreview: React.FC<{ file: OdFileObject }> = ({ file }) => {
           <DownloadButton
             onClickCallback={() => {
               clipboard.copy(`${getBaseUrl()}/api?path=${asPath}&raw=true`)
-              toast.success('Copied direct link to clipboard.')
+              toast.success('链接已复制')
             }}
             btnColor="pink"
-            btnText="Copy direct link"
+            btnText="复制链接"
             btnIcon="copy"
           />
 
-          <DownloadButton
+{/*       <DownloadButton
             onClickCallback={() => window.open(`iina://weblink?url=${file['@microsoft.graph.downloadUrl']}`)}
             btnText="IINA"
             btnImage="/players/iina.png"
-          />
+          />*/}
           <DownloadButton
             onClickCallback={() => window.open(`vlc://${file['@microsoft.graph.downloadUrl']}`)}
             btnText="VLC"

@@ -182,7 +182,7 @@ const FileListing: FC<{ query?: ParsedUrlQuery }> = ({ query }) => {
   if (!data) {
     return (
       <PreviewContainer>
-        <Loading loadingText="Loading ..." />
+        <Loading loadingText="加载中…" />
       </PreviewContainer>
     )
   }
@@ -287,13 +287,13 @@ const FileListing: FC<{ query?: ParsedUrlQuery }> = ({ query }) => {
         downloadMultipleFiles({ toastId, router, files, folder })
           .then(() => {
             setTotalGenerating(false)
-            toast.success('Finished downloading selected files.', {
+            toast.success('文件下载完成', {
               id: toastId,
             })
           })
           .catch(() => {
             setTotalGenerating(false)
-            toast.error('Failed to download selected files.', { id: toastId })
+            toast.error('文件下载失败', { id: toastId })
           })
       }
     }
@@ -303,7 +303,7 @@ const FileListing: FC<{ query?: ParsedUrlQuery }> = ({ query }) => {
       const files = (async function* () {
         for await (const { meta: c, path: p, isFolder, error } of traverseFolder(path)) {
           if (error) {
-            toast.error(`Failed to download folder ${p}: ${error.status} ${error.message} Skipped it to continue.`)
+            toast.error(`文件夹下载失败 ${p}: ${error.status} ${error.message} 已跳过`)
             continue
           }
           yield {
@@ -327,11 +327,11 @@ const FileListing: FC<{ query?: ParsedUrlQuery }> = ({ query }) => {
       })
         .then(() => {
           setFolderGenerating({ ...folderGenerating, [id]: false })
-          toast.success('Finished downloading folder.', { id: toastId })
+          toast.success('文件夹下载完成', { id: toastId })
         })
         .catch(() => {
           setFolderGenerating({ ...folderGenerating, [id]: false })
-          toast.error('Failed to download folder.', { id: toastId })
+          toast.error('文件夹下载失败', { id: toastId })
         })
     }
 
@@ -357,13 +357,13 @@ const FileListing: FC<{ query?: ParsedUrlQuery }> = ({ query }) => {
                   checked={totalSelected}
                   onChange={toggleTotalSelected}
                   indeterminate={true}
-                  title={'Select files'}
+                  title={'选择文件'}
                 />
                 {totalGenerating ? (
-                  <Downloading title="Downloading selected files, refresh page to cancel" />
+                  <Downloading title="正在下载文件，刷新以取消" />
                 ) : (
                   <button
-                    title="Download selected files"
+                    title="下载文件"
                     className="hover:bg-gray-300 dark:hover:bg-gray-600 p-1.5 rounded cursor-pointer disabled:text-gray-400 disabled:dark:text-gray-600 disabled:hover:bg-white disabled:hover:dark:bg-gray-900 disabled:cursor-not-allowed"
                     disabled={totalSelected === 0}
                     onClick={handleSelectedDownload}
@@ -406,7 +406,7 @@ const FileListing: FC<{ query?: ParsedUrlQuery }> = ({ query }) => {
                     render: <FontAwesomeIcon icon={['fas', 'copy']} />,
                     onClick: i => {
                       clipboard.copy(i.alt ? `${getBaseUrl()}/api?path=${path + '/' + i.alt}&raw=true` : '')
-                      toast('Copied image permanent link to clipboard.', {
+                      toast('链接已复制', {
                         icon: '👌',
                       })
                     },
@@ -440,16 +440,16 @@ const FileListing: FC<{ query?: ParsedUrlQuery }> = ({ query }) => {
                     className="hover:bg-gray-300 dark:hover:bg-gray-600 px-1.5 py-1 rounded cursor-pointer"
                     onClick={() => {
                       clipboard.copy(`${getBaseUrl()}${path === '/' ? '' : path}/${encodeURIComponent(c.name)}`)
-                      toast('Copied folder permalink.', { icon: '👌' })
+                      toast('链接已复制', { icon: '👌' })
                     }}
                   >
                     <FontAwesomeIcon icon={['far', 'copy']} />
                   </span>
                   {folderGenerating[c.id] ? (
-                    <Downloading title="Downloading folder, refresh page to cancel" />
+                    <Downloading title="正在下载文件夹，刷新以取消" />
                   ) : (
                     <span
-                      title="Download folder"
+                      title="下载文件夹"
                       className="hover:bg-gray-300 dark:hover:bg-gray-600 px-1.5 py-1 rounded cursor-pointer"
                       onClick={() => {
                         const p = `${path === '/' ? '' : path}/${encodeURIComponent(c.name)}`
@@ -463,19 +463,19 @@ const FileListing: FC<{ query?: ParsedUrlQuery }> = ({ query }) => {
               ) : (
                 <div className="md:flex dark:text-gray-400 hidden p-1.5 text-gray-700">
                   <span
-                    title="Copy raw file permalink"
+                    title="复制链接"
                     className="hover:bg-gray-300 dark:hover:bg-gray-600 px-1.5 py-1 rounded cursor-pointer"
                     onClick={() => {
                       clipboard.copy(
                         `${getBaseUrl()}/api?path=${path === '/' ? '' : path}/${encodeURIComponent(c.name)}&raw=true`
                       )
-                      toast.success('Copied raw file permalink.')
+                      toast.success('链接已复制')
                     }}
                   >
                     <FontAwesomeIcon icon={['far', 'copy']} />
                   </span>
                   <a
-                    title="Download file"
+                    title="下载文件"
                     className="hover:bg-gray-300 dark:hover:bg-gray-600 px-1.5 py-1 rounded cursor-pointer"
                     href={c['@microsoft.graph.downloadUrl']}
                   >
@@ -488,7 +488,7 @@ const FileListing: FC<{ query?: ParsedUrlQuery }> = ({ query }) => {
                   <Checkbox
                     checked={selected[c.id] ? 2 : 0}
                     onChange={() => toggleItemSelected(c.id)}
-                    title="Select file"
+                    title="选择文件"
                   />
                 )}
               </div>
@@ -532,10 +532,10 @@ const FileListing: FC<{ query?: ParsedUrlQuery }> = ({ query }) => {
                     </svg>
                   </>
                 ) : isReachingEnd ? (
-                  <span>No more files</span>
+                  <span>文件加载完成</span>
                 ) : (
                   <>
-                    <span>Load more</span>
+                    <span>加载更多</span>
                     <FontAwesomeIcon icon="chevron-circle-down" />
                   </>
                 )}
@@ -619,7 +619,7 @@ const FileListing: FC<{ query?: ParsedUrlQuery }> = ({ query }) => {
 
   return (
     <PreviewContainer>
-      <FourOhFour errorMsg={`Cannot preview ${path}`} />
+      <FourOhFour errorMsg={`无法预览 ${path}`} />
     </PreviewContainer>
   )
 }

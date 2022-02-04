@@ -15,7 +15,7 @@ export function DownloadingToast(router: NextRouter, progress?: string) {
   return (
     <div className="flex items-center space-x-2">
       <div className="w-56">
-        <span>Downloading {progress ? `${progress}%` : 'selected files...'}</span>
+        <span>下载中</span>
 
         <div className="relative mt-2">
           <div className="overflow-hidden h-1 flex rounded bg-gray-100">
@@ -27,7 +27,7 @@ export function DownloadingToast(router: NextRouter, progress?: string) {
         className="p-2 rounded bg-red-500 hover:bg-red-400 text-white focus:outline-none focus:ring focus:ring-red-300"
         onClick={() => router.reload()}
       >
-        Cancel
+        取消
       </button>
     </div>
   )
@@ -206,7 +206,7 @@ export async function* traverseFolder(path: string): AsyncGenerator<
               return { path: p, meta: c, isFolder: Boolean(c.folder) }
             })
           } else {
-            throw new Error('Path is not folder')
+            throw new Error('路径非文件夹')
           }
         })(fp)
       )

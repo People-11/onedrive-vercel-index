@@ -23,7 +23,7 @@ const Navbar = () => {
   const [searchOpen, setSearchOpen] = useState(false)
   const openSearchBox = () => setSearchOpen(true)
 
-  useHotkeys(`${os === 'mac' ? 'cmd' : 'ctrl'}+k`, openSearchBox)
+  /*useHotkeys(`${os === 'mac' ? 'cmd' : 'ctrl'}+k`, openSearchBox)*/
 
   useEffect(() => {
     const storedToken = () => {
@@ -44,7 +44,7 @@ const Navbar = () => {
       localStorage.removeItem(r)
     })
 
-    toast.success('Cleared all tokens')
+    toast.success('凭证已清除')
     setTimeout(() => {
       router.reload()
     }, 1000)
@@ -71,15 +71,15 @@ const Navbar = () => {
           >
             <div className="flex items-center space-x-2">
               <FontAwesomeIcon icon="search" />
-              <span className="text-sm font-medium">Search ...</span>
+              <span className="text-sm font-medium">搜索…</span>
             </div>
 
-            <div className="flex items-center space-x-1">
+{/*         <div className="flex items-center space-x-1">
               <div className="px-2 py-1 rounded-lg bg-gray-200 dark:bg-gray-700 font-medium text-xs">
                 {os === 'mac' ? '⌘' : 'Ctrl'}
               </div>
               <div className="px-2 py-1 rounded-lg bg-gray-200 dark:bg-gray-700 font-medium text-xs">K</div>
-            </div>
+            </div>*/}
           </button>
 
           {siteConfig.links.length !== 0 &&
@@ -99,7 +99,7 @@ const Navbar = () => {
           {siteConfig.email && (
             <a href={siteConfig.email} className="flex items-center space-x-2 dark:text-white hover:opacity-80">
               <FontAwesomeIcon icon={['far', 'envelope']} />
-              <span className="text-sm font-medium hidden md:inline-block">Email</span>
+              <span className="text-sm font-medium hidden md:inline-block">邮箱</span>
             </a>
           )}
 
@@ -108,7 +108,7 @@ const Navbar = () => {
               className="dark:text-white flex items-center p-2 space-x-2 hover:opacity-80"
               onClick={() => setIsOpen(true)}
             >
-              <span className="text-sm font-medium">Logout</span>
+              <span className="text-sm font-medium">注销</span>
               <FontAwesomeIcon icon="sign-out-alt" />
             </button>
           )}
@@ -149,8 +149,7 @@ const Navbar = () => {
                 </Dialog.Title>
                 <div className="mt-2">
                   <p className="text-sm text-gray-500">
-                    These tokens are used to authenticate yourself into password protected folders, clearing them means
-                    that you will need to re-enter the passwords again.
+                    这是您进入私密文件夹的凭证，删除它后您可能需要重新输入密码以访问私密文件夹
                   </p>
                 </div>
 

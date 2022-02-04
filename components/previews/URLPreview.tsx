@@ -24,7 +24,7 @@ const TextPreview = ({ file }) => {
   if (validating) {
     return (
       <PreviewContainer>
-        <Loading loadingText="Loading file content..." />
+        <Loading loadingText="正在加载…" />
       </PreviewContainer>
     )
   }
@@ -32,7 +32,7 @@ const TextPreview = ({ file }) => {
   if (!content) {
     return (
       <PreviewContainer>
-        <FourOhFour errorMsg="File is empty." />
+        <FourOhFour errorMsg="文件无内容" />
       </PreviewContainer>
     )
   }
@@ -47,9 +47,9 @@ const TextPreview = ({ file }) => {
           <DownloadButton
             onClickCallback={() => window.open(parseDotUrl(content) || '')}
             btnColor="blue"
-            btnText="Open URL"
+            btnText="打开链接"
             btnIcon="external-link-alt"
-            btnTitle={`Open URL ${parseDotUrl(content) || ''}`}
+            btnTitle={`打开链接 ${parseDotUrl(content) || ''}`}
           />
         </div>
       </DownloadBtnContainer>

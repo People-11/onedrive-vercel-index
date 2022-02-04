@@ -50,7 +50,7 @@ const EPUBPreview: FC<{ file: OdFileObject }> = ({ file }) => {
             <ReactReader
               url={file['@microsoft.graph.downloadUrl']}
               getRendition={rendition => fixEpub(rendition)}
-              loadingView={<Loading loadingText="Loading EPUB ..." />}
+              loadingView={<Loading loadingText="正在加载…" />}
               location={location}
               locationChanged={onLocationChange}
               epubInitOptions={{ openAs: 'epub' }}

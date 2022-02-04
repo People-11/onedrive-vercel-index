@@ -76,7 +76,7 @@ const MarkdownPreview: FC<{
   if (validating) {
     return (
       <PreviewContainer>
-        <Loading loadingText="Loading file content..." />
+        <Loading loadingText="正在加载…" />
       </PreviewContainer>
     )
   }

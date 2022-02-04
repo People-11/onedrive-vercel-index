@@ -17,7 +17,7 @@ const TextPreview = ({ file }) => {
   if (validating) {
     return (
       <PreviewContainer>
-        <Loading loadingText="Loading file content..." />
+        <Loading loadingText="正在加载…" />
       </PreviewContainer>
     )
   }
@@ -25,7 +25,7 @@ const TextPreview = ({ file }) => {
   if (!content) {
     return (
       <PreviewContainer>
-        <FourOhFour errorMsg="File is empty." />
+        <FourOhFour errorMsg="文件无内容" />
       </PreviewContainer>
     )
   }
