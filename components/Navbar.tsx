@@ -74,12 +74,12 @@ const Navbar = () => {
               <span className="text-sm font-medium">搜索…</span>
             </div>
 
-            <div className="flex items-center space-x-1">
+{/*         <div className="flex items-center space-x-1">
               <div className="rounded-lg bg-gray-200 px-2 py-1 text-xs font-medium dark:bg-gray-700">
                 {os === 'mac' ? '⌘' : 'Ctrl'}
               </div>
               <div className="rounded-lg bg-gray-200 px-2 py-1 text-xs font-medium dark:bg-gray-700">K</div>
-            </div>
+            </div>*/}
           </button>
 
           {siteConfig.links.length !== 0 &&

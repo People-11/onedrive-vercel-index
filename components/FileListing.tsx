@@ -307,7 +307,7 @@ const FileListing: FC<{ query?: ParsedUrlQuery }> = ({ query }) => {
       <>
         <Toaster />
 
-        {layout.name === 'Grid' ? <FolderGridLayout {...folderProps} /> : <FolderListLayout {...folderProps} />}
+        {layout.name === '网格' ? <FolderGridLayout {...folderProps} /> : <FolderListLayout {...folderProps} />}
 
         {!onlyOnePage && (
           <div className="rounded-b bg-white dark:bg-gray-900 dark:text-gray-100">
@@ -330,7 +330,7 @@ const FileListing: FC<{ query?: ParsedUrlQuery }> = ({ query }) => {
                 <span>加载完成</span>
               ) : (
                 <>
-                  <span>加载更多…</span>
+                  <span>加载更多</span>
                   <FontAwesomeIcon icon="chevron-circle-down" />
                 </>
               )}

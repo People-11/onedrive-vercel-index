@@ -48,16 +48,16 @@ const FolderListLayout = ({
     <div className="rounded bg-white dark:bg-gray-900 dark:text-gray-100">
       <div className="grid grid-cols-12 items-center space-x-2 border-b border-gray-900/10 px-3 dark:border-gray-500/30">
         <div className="col-span-12 py-2 text-xs font-bold uppercase tracking-widest text-gray-600 dark:text-gray-300 md:col-span-6">
-          Name
+          名称
         </div>
         <div className="col-span-3 hidden text-xs font-bold uppercase tracking-widest text-gray-600 dark:text-gray-300 md:block">
-          Last Modified
+          修改日期
         </div>
         <div className="hidden text-xs font-bold uppercase tracking-widest text-gray-600 dark:text-gray-300 md:block">
-          Size
+          大小
         </div>
         <div className="hidden text-xs font-bold uppercase tracking-widest text-gray-600 dark:text-gray-300 md:block">
-          Actions
+          操作
         </div>
         <div className="hidden text-xs font-bold uppercase tracking-widest text-gray-600 dark:text-gray-300 md:block">
           <div className="hidden p-1.5 text-gray-700 dark:text-gray-400 md:flex">
@@ -65,13 +65,13 @@ const FolderListLayout = ({
               checked={totalSelected}
               onChange={toggleTotalSelected}
               indeterminate={true}
-              title={'Select files'}
+              title={'选择文件'}
             />
             {totalGenerating ? (
-              <Downloading title="Downloading selected files, refresh page to cancel" />
+              <Downloading title="正在下载文件，刷新以取消" />
             ) : (
               <button
-                title="Download selected files"
+                title="下载文件"
                 className="cursor-pointer rounded p-1.5 hover:bg-gray-300 disabled:cursor-not-allowed disabled:text-gray-400 disabled:hover:bg-white dark:hover:bg-gray-600 disabled:dark:text-gray-600 disabled:hover:dark:bg-gray-900"
                 disabled={totalSelected === 0}
                 onClick={handleSelectedDownload}
@@ -97,20 +97,20 @@ const FolderListLayout = ({
           {c.folder ? (
             <div className="hidden p-1.5 text-gray-700 dark:text-gray-400 md:flex">
               <span
-                title="Copy folder permalink"
+                title="复制链接"
                 className="cursor-pointer rounded px-1.5 py-1 hover:bg-gray-300 dark:hover:bg-gray-600"
                 onClick={() => {
                   clipboard.copy(`${getBaseUrl()}${path === '/' ? '' : path}/${encodeURIComponent(c.name)}`)
-                  toast('Copied folder permalink.', { icon: '👌' })
+                  toast('链接已复制', { icon: '👌' })
                 }}
               >
                 <FontAwesomeIcon icon={['far', 'copy']} />
               </span>
               {folderGenerating[c.id] ? (
-                <Downloading title="Downloading folder, refresh page to cancel" />
+                <Downloading title="正在下载文件夹，刷新以取消" />
               ) : (
                 <span
-                  title="Download folder"
+                  title="下载文件夹"
                   className="cursor-pointer rounded px-1.5 py-1 hover:bg-gray-300 dark:hover:bg-gray-600"
                   onClick={() => {
                     const p = `${path === '/' ? '' : path}/${encodeURIComponent(c.name)}`
@@ -124,19 +124,19 @@ const FolderListLayout = ({
           ) : (
             <div className="hidden p-1.5 text-gray-700 dark:text-gray-400 md:flex">
               <span
-                title="Copy raw file permalink"
+                title="复制链接"
                 className="cursor-pointer rounded px-1.5 py-1 hover:bg-gray-300 dark:hover:bg-gray-600"
                 onClick={() => {
                   clipboard.copy(
                     `${getBaseUrl()}/api?path=${path === '/' ? '' : path}/${encodeURIComponent(c.name)}&raw=true`
                   )
-                  toast.success('Copied raw file permalink.')
+                  toast.success('链接已复制')
                 }}
               >
                 <FontAwesomeIcon icon={['far', 'copy']} />
               </span>
               <a
-                title="Download file"
+                title="下载文件"
                 className="cursor-pointer rounded px-1.5 py-1 hover:bg-gray-300 dark:hover:bg-gray-600"
                 href={c['@microsoft.graph.downloadUrl']}
               >
@@ -149,7 +149,7 @@ const FolderListLayout = ({
               <Checkbox
                 checked={selected[c.id] ? 2 : 0}
                 onChange={() => toggleItemSelected(c.id)}
-                title="Select file"
+                title="选择文件"
               />
             )}
           </div>
