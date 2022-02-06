@@ -1,8 +1,8 @@
 <div align="center">
   <img src="./public/header.png" alt="onedrive-vercel-index" />
   <h3><a href="https://drive.spencerwoo.com">onedrive-vercel-index</a></h3>
-  <p><a href="https://onedrive-vercel-index.spencerwoo.com/docs/getting-started">Get started</a> · <a href="https://onedrive-vercel-index.spencerwoo.com/blog/whats-new">What's new?</a> · <a href="https://onedrive-vercel-index.spencerwoo.com/sponsor">Sponsoring</a></p>
-  <p><em>OneDrive public directory listing, powered by Vercel and Next.js</em></p>
+  <p><a href="https://onedrive-vercel-index.spencerwoo.com/docs/getting-started">立即上手</a> · <a href="https://onedrive-vercel-index.spencerwoo.com/blog/whats-new">更新内容</a> · <a href="https://onedrive-vercel-index.spencerwoo.com/sponsor">支持一下</a></p>
+  <p><em>OneDrive 公共目录索引, 由 Vercel 与 Next.js 构建</em></p>
 
   <img src="https://img.shields.io/badge/OneDrive-2C68C3?style=flat&logo=microsoft-onedrive&logoColor=white" alt="OneDrive" />
   <img src="https://img.shields.io/badge/Next.js-black?style=flat&logo=next.js&logoColor=white" alt="Next.js" />
@@ -11,36 +11,36 @@
   <a href="https://github.com/spencerwooo/onedrive-vercel-index/discussions"><img src="https://img.shields.io/github/discussions/spencerwooo/onedrive-vercel-index?color=CF2B5B&labelColor=black&logo=github" alt="GitHub Discussions" /></a>
 </div>
 
-## TL;DR
+## 太长不看版
 
-Showcase, share, preview, and download files inside *your* OneDrive with onedrive-vercel-index -
+- 使用 onedrive-vercel-index 展示、分享、预览以及下载您 OneDrive 里的文件 -
 
-- Completely free to host 💸
-- Fast ⚡ and responsive 💦
-- Takes less than 15 minutes to setup ⏱️
-- Highly customisable ⚒️
+- 完全免费 💸
+- 高速 ⚡ 且 可靠 💦
+- 快速上手 ⏱️
+- 可高度定制 ⚒️
 
-🍌 More importantly, we are pretty (●'◡'●)
+🍌 重点是，它好看 (●'◡'●)
 
-## Quick start
+## 立即开始
 
-🚀 Quick start: [Getting started](https://onedrive-vercel-index.spencerwoo.com/docs/getting-started).
+🚀 立即开始: 请参考[文档](https://onedrive-vercel-index.spencerwoo.com/docs/getting-started).
 
-## Discussion
+## 交流与讨论
 
-Please go to our [discussion forum](https://github.com/spencerwooo/onedrive-vercel-index/discussions) for general questions and FAQs, **issues are for bug reports and bug reports only.** Feature requests may or may not be ignored, as [I (@spencerwooo)](https://spencerwoo.com) am the only one maintaining the project, so **I only prioritise features that I use.**
+请到 [交流板块](https://github.com/spencerwooo/onedrive-vercel-index/discussions) 提出你的问题与疑惑 **issue是用来提交bug的** 正如是 [我 (@spencerwooo)](https://spencerwoo.com) 维护的这个项目 **我只会添加我自己需要的功能**
 
-*If you happen to like this project, please give it a star!* :3
+*喜欢的话就给个star吧！* :3
 
-*If you really, really like this project, please send money! -> [Sponsors 🤑 and donations 💰](https://onedrive-vercel-index.spencerwoo.com/sponsor)*
+*吹爆此项目？请考虑支援我！ -> [赞助 🤑 捐赠 💰](https://onedrive-vercel-index.spencerwoo.com/sponsor)*
 
-## Demo
+## 在线演示
 
-Live demo at [Spencer's OneDrive](https://drive.spencerwoo.com).
+ [Spencer's OneDrive](https://drive.spencerwoo.com).
 
 ![demo](./public/demo.png)
 
-## Features
+## 特性
 
 <table>
   <tbody>
@@ -48,102 +48,102 @@ Live demo at [Spencer's OneDrive](https://drive.spencerwoo.com).
       <td>
         <a
           href="https://drive.spencerwoo.com/Lecture%20and%20Coursework%20CS%20(BIT)/2019%20-%20%E5%A4%A7%E4%B8%89%E4%B8%8B%20-%20%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86%E4%B8%8E%E8%AE%BE%E8%AE%A1/n1570.pdf"
-          >👀 File preview</a
+          >👀 文件预览</a
         >
       </td>
       <td>
         <a
           href="https://drive.spencerwoo.com/%F0%9F%8D%87%20Wallpaper"
-          >💠  List / Grid layouts</a
+          >💠  列表 / 网格视图</a
         >
       </td>
       <td>
         <a
           href="https://drive.spencerwoo.com/%F0%9F%8D%A1%20Genshin%20PV/New%20version%20PV/TGA2021%E3%80%8A%E5%8E%9F%E7%A5%9E%E3%80%8B%E5%8F%82%E9%80%89%E8%A7%86%E9%A2%91.mp4"
-          >🎥 Video and audio</a
+          >🎥 多媒体播放</a
         >
       </td>
     </tr>
     <tr>
-      <td>PDF, EPUB, markdown, code, plain text</td>
-      <td>For previewing images and documents with thumbnails</td>
-      <td>mp4, mp3, ..., play online or with IINA, PotPlayer ... with subtitles!</td>
+      <td>PDF，EPUB，markdown，代码，纯文本</td>
+      <td>以封面形态预览图片与文档</td>
+      <td>在线或通过本地播放器播放媒体，还支持字幕！</td>
     </tr>
     <tr>
       <td>
         <a
           href="https://drive.spencerwoo.com/Lecture%20and%20Coursework%20CS%20(BIT)/2017%20-%20%E5%A4%A7%E4%BA%8C%E4%B8%8A%20-%20%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/1%20%E7%BB%AA%E8%AE%BA.pptx"
-          >📄 Office preview</a
+          >📄 Office 文件预览</a
         >
       </td>
-      <td><a href="https://drive.spencerwoo.com/%F0%9F%A5%9F%20Some%20test%20files/Articles">📝 README.md preview</a></td>
-      <td><a href="https://drive.spencerwoo.com/%F0%9F%A5%9F%20Some%20test%20files/Imagenette">📑 Pagination</a></td>
+      <td><a href="https://drive.spencerwoo.com/%F0%9F%A5%9F%20Some%20test%20files/Articles">📝 README.md 文件预览</a></td>
+      <td><a href="https://drive.spencerwoo.com/%F0%9F%A5%9F%20Some%20test%20files/Imagenette">📑 分页展示</a></td>
     </tr>
     <tr>
-      <td>docx, pptx, xlsx, ...</td>
-      <td>Also renders code blocks, images with relative links, ...</td>
-      <td>For folders with 200 or more items</td>
+      <td>docx，pptx，xlsx，…</td>
+      <td>图片，链接与代码块也不在话下</td>
+      <td>支持展示超过200个项目的文件夹</td>
     </tr>
     <tr>
-      <td><a href="https://drive.spencerwoo.com/%F0%9F%8C%9E%20Private%20folder">🔒 Protected folders</a></td>
-      <td><a href="https://drive.spencerwoo.com/%F0%9F%8D%8A%20Weibo%20emotes/Source2">⏬ Multi-file download</a></td>
-      <td>🔎 Native Search</td>
+      <td><a href="https://drive.spencerwoo.com/%F0%9F%8C%9E%20Private%20folder">🔒 加密文件夹</a></td>
+      <td><a href="https://drive.spencerwoo.com/%F0%9F%8D%8A%20Weibo%20emotes/Source2">⏬ 多文件下载</a></td>
+      <td>🔎 原生搜索</td>
     </tr>
     <tr>
-      <td>Password protected routes and files. <a href="https://onedrive-vercel-index.spencerwoo.com/docs/features/protected-folders">Details here</a></td>
+      <td>加密目录与文件 <a href="https://onedrive-vercel-index.spencerwoo.com/docs/features/protected-folders">详情</a></td>
       <td>
-        Compress and download multiple files or folders.
-        <a href="https://onedrive-vercel-index.spencerwoo.com/docs/features/multi-file-folder-download">Details here</a>
+        压缩并下载文件夹与文件
+        <a href="https://onedrive-vercel-index.spencerwoo.com/docs/features/multi-file-folder-download">详情</a>
       </td>
       <td>
-        Searching through your shared OneDrive files (with some caveats 🥺).
-        <a href="https://onedrive-vercel-index.spencerwoo.com/docs/features/search-for-files-and-folders">Details here</a>
+        文件搜索 (但有点问题 🥺).
+        <a href="https://onedrive-vercel-index.spencerwoo.com/docs/features/search-for-files-and-folders">详情</a>
       </td>
     </tr>
   </tbody>
 </table>
 
-... and more:
+… 不止于此：
 
-- Streamlined deployment, without having to get your tokens manually anymore!
-- Direct raw-file serving and hosting ...
-- Full dark mode support, style and website customisations ...
+- 全自动部署，无需您手动获取信息！
+- 文件链接以直链提供！
+- 黑暗模式！还有高度的客制化！
 
-## Documentation
+## 文档
 
-Documentation is hosted at [onedrive-vercel-index.spencerwoo.com](https://onedrive-vercel-index.spencerwoo.com/).
+文档在这 [onedrive-vercel-index.spencerwoo.com](https://onedrive-vercel-index.spencerwoo.com/).
 
-- How can I get started and deploy? - [Docs - Getting started](https://onedrive-vercel-index.spencerwoo.com/docs/getting-started).
-- How can I configure ... ? - [Docs - Custom configs](https://onedrive-vercel-index.spencerwoo.com/docs/custom-configs).
-- Where is feature ... ?
+- 开始部署 - [Docs - Getting started](https://onedrive-vercel-index.spencerwoo.com/docs/getting-started).
+- 怎么设置？ - [Docs - Custom configs](https://onedrive-vercel-index.spencerwoo.com/docs/custom-configs).
+- 特性呢？
   - [Docs - Password protected folders](https://onedrive-vercel-index.spencerwoo.com/docs/features/protected-folders)
   - [Docs - Multi-file and folder download](https://onedrive-vercel-index.spencerwoo.com/docs/features/multi-file-folder-download)
   - [Docs - Hosting files (images) directly](https://onedrive-vercel-index.spencerwoo.com/docs/features/hosting-images-directly)
   - [Docs - Search for files and folders](https://onedrive-vercel-index.spencerwoo.com/docs/features/search-for-files-and-folders)
   - [Docs - Load video subtitles](https://onedrive-vercel-index.spencerwoo.com/docs/features/load-video-subtitles)
-- I deployed this before, how can I upgrade to the latest version? - [Docs - Updating to the latest version](https://onedrive-vercel-index.spencerwoo.com/docs/migration/updating-to-latest-version)
-- I was here before 2022, how can I migrate to the new version? - [Docs - Migrating from versions before 2022](https://onedrive-vercel-index.spencerwoo.com/docs/migration/if-you-deployed-before-2022).
-- I got a problem during deployment ... - [Docs - FAQ](https://onedrive-vercel-index.spencerwoo.com/docs/faqs/error-on-deployment)
-- I didn't find a solution / My problem is unique - [Find help in discussion forum](https://github.com/spencerwooo/onedrive-vercel-index/discussions).
+- 我以前部署过，要怎样更新？ - [Docs - Updating to the latest version](https://onedrive-vercel-index.spencerwoo.com/docs/migration/updating-to-latest-version)
+- 我如何从旧版迁移到2022年的全新版本？ - [Docs - Migrating from versions before 2022](https://onedrive-vercel-index.spencerwoo.com/docs/migration/if-you-deployed-before-2022).
+- 我部署时遇到问题 - [Docs - FAQ](https://onedrive-vercel-index.spencerwoo.com/docs/faqs/error-on-deployment)
+- 文档里没有我遇到的问题 - [Find help in discussion forum](https://github.com/spencerwooo/onedrive-vercel-index/discussions).
 
-## Server-*less* (free)?
+## *无*服务器（免费）？
 
-Yes! Completely free with no backend server what-so-ever. (Well, we use Redis, but that's free to some extent also.)
+确实，整个部署过程都不会使用付费项目（有用redis，但超出配额才付费，一般不会超出）
 
-## Sponsors and donations!
+## 支持我！
 
-Open-source is hard! If you happen to like this project and want me to keep going, please consider sponsoring me or providing a single donation! Thanks for all the love and support!
+路漫漫其修远兮！如果您喜欢此项目，请考虑支援我（成为赞助者或进行捐赠），我将无比感激！
 
-[🧸 Please donate - 微信/支付宝](https://onedrive-vercel-index.spencerwoo.com/sponsor) · [Patreon](https://www.patreon.com/spencerwoo) · [爱发电](https://afdian.net/@spencerwoo)
+[🧸 请捐赠 - 微信/支付宝](https://onedrive-vercel-index.spencerwoo.com/sponsor) · [Patreon](https://www.patreon.com/spencerwoo) · [爱发电](https://afdian.net/@spencerwoo)
 
-### Sponsors
+### 赞助者
 
-*Your name will appear here if you sponsor or donate 😀*
+*如果您曾支援过我，您的名字将展示在这里 😀*
 
 ---
 
-**onedrive-vercel-index** ©Spencer Woo. Released under the MIT License.
+**onedrive-vercel-index** ©Spencer Woo. 使用 MIT License 开源协议发布
 
-Authored and maintained by Spencer Woo.
+由 Spencer Woo 主持并维护
 
 > [@Portfolio](https://spencerwoo.com/) · [@Blog](https://blog.spencerwoo.com/) · [@GitHub](https://github.com/spencerwooo)
