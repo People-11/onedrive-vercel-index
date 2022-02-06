@@ -312,7 +312,7 @@ const FileListing: FC<{ query?: ParsedUrlQuery }> = ({ query }) => {
         {!onlyOnePage && (
           <div className="rounded-b bg-white dark:bg-gray-900 dark:text-gray-100">
             <div className="border-b border-gray-200 p-3 text-center font-mono text-sm text-gray-400 dark:border-gray-700">
-              - showing {size} page{size > 1 ? 's' : ''} of {isLoadingMore ? '...' : folderChildren.length} files -
+              - 第 {size} 页{size > 1 ? 's' : ''} 共 {isLoadingMore ? '...' : folderChildren.length} 个文件 -
             </div>
             <button
               className={`flex w-full items-center justify-center space-x-2 p-3 disabled:cursor-not-allowed ${
