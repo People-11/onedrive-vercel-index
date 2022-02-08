@@ -7,6 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { getBaseUrl } from '../utils/getBaseUrl'
 import { humanFileSize, formatModifiedDateTime } from '../utils/fileDetails'
+import { getReadablePath } from '../utils/getReadablePath'
 
 import { Downloading, Checkbox, formatChildName, ChildIcon } from './FileListing'
 
@@ -100,7 +101,9 @@ const FolderListLayout = ({
                 title="复制链接"
                 className="cursor-pointer rounded px-1.5 py-1 hover:bg-gray-300 dark:hover:bg-gray-600"
                 onClick={() => {
-                  clipboard.copy(`${getBaseUrl()}${path === '/' ? '' : path}/${encodeURIComponent(c.name)}`)
+                  clipboard.copy(
+                    `${getBaseUrl()}${getReadablePath(`${path === '/' ? '' : path}/${encodeURIComponent(c.name)}`)}`
+                  )
                   toast('链接已复制', { icon: '👌' })
                 }}
               >
@@ -128,7 +131,9 @@ const FolderListLayout = ({
                 className="cursor-pointer rounded px-1.5 py-1 hover:bg-gray-300 dark:hover:bg-gray-600"
                 onClick={() => {
                   clipboard.copy(
-                    `${getBaseUrl()}/api?path=${path === '/' ? '' : path}/${encodeURIComponent(c.name)}&raw=true`
+                    `${getBaseUrl()}/api?path=${getReadablePath(
+                      `${path === '/' ? '' : path}/${encodeURIComponent(c.name)}`
+                    )}&raw=true`
                   )
                   toast.success('链接已复制')
                 }}
