@@ -203,7 +203,7 @@ export default function SearchModal({
                   value={query}
                   onChange={e => setQuery(e.target.value)}
                 />
-                {/*<div className="px-2 py-1 rounded-lg bg-gray-200 dark:bg-gray-700 font-medium text-xs">ESC</div>*/}
+                <div className="px-2 py-1 rounded-lg bg-gray-200 dark:bg-gray-700 font-medium text-xs">ESC</div>
               </Dialog.Title>
 
               <div
