@@ -82,12 +82,12 @@ const DownloadButtonGroup: React.FC<{ downloadUrl: string }> = ({ downloadUrl })
       <DownloadButton
         onClickCallback={() => {
           clipboard.copy(`${getBaseUrl()}/api?path=${asPath}&raw=true`)
-          toast.success('Copied direct link to clipboard.')
+          toast.success('链接已复制')
         }}
         btnColor="pink"
         btnText="复制链接"
         btnIcon="copy"
-        btnTitle="复制下载链接"
+        btnTitle="复制链接"
       />
     </div>
   )
