@@ -8,9 +8,11 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { Fragment, useEffect, useState } from 'react'
+import { useTranslation } from 'next-i18next'
 
 import siteConfig from '../config/site.config'
 import SearchModal from './SearchModal'
+import SwitchLang from './SwitchLang'
 import useDeviceOS from '../utils/useDeviceOS'
 
 const Navbar = () => {
@@ -40,6 +42,8 @@ const Navbar = () => {
     setTokenPresent(storedToken())
   }, [])
 
+  const { t } = useTranslation()
+
   const clearTokens = () => {
     setIsOpen(false)
 
@@ -47,7 +51,7 @@ const Navbar = () => {
       localStorage.removeItem(r)
     })
 
-    toast.success('凭证已清除')
+    toast.success(t('Cleared all tokens'))
     setTimeout(() => {
       router.reload()
     }, 1000)
@@ -74,7 +78,7 @@ const Navbar = () => {
           >
             <div className="flex items-center space-x-2">
               <FontAwesomeIcon className="h-4 w-4" icon="search" />
-              <span className="text-sm font-medium">搜索…</span>
+              <span className="text-sm font-medium">{t('Search ...')}</span>
             </div>
 
             <div className="flex items-center space-x-1">
@@ -84,6 +88,8 @@ const Navbar = () => {
               <div className="rounded-lg bg-gray-200 px-2 py-1 text-xs font-medium dark:bg-gray-700">K</div>
             </div>
           </button>
+
+          <SwitchLang />
 
           {siteConfig.links.length !== 0 &&
             siteConfig.links.map((l: { name: string; link: string }) => (
@@ -95,14 +101,20 @@ const Navbar = () => {
                 className="flex items-center space-x-2 hover:opacity-80 dark:text-white"
               >
                 <FontAwesomeIcon icon={['fab', l.name.toLowerCase() as IconName]} />
-                <span className="hidden text-sm font-medium md:inline-block">{l.name}</span>
+                <span className="hidden text-sm font-medium md:inline-block">
+                  {
+                    // Append link name comments here to add translations
+                    // t('Weibo')
+                    t(l.name)
+                  }
+                </span>
               </a>
             ))}
 
           {siteConfig.email && (
             <a href={siteConfig.email} className="flex items-center space-x-2 hover:opacity-80 dark:text-white">
               <FontAwesomeIcon icon={['far', 'envelope']} />
-              <span className="hidden text-sm font-medium md:inline-block">邮箱</span>
+              <span className="hidden text-sm font-medium md:inline-block">{t('Email')}</span>
             </a>
           )}
 
@@ -111,7 +123,7 @@ const Navbar = () => {
               className="flex items-center space-x-2 p-2 hover:opacity-80 dark:text-white"
               onClick={() => setIsOpen(true)}
             >
-              <span className="text-sm font-medium">注销</span>
+              <span className="text-sm font-medium">{t('Logout')}</span>
               <FontAwesomeIcon icon="sign-out-alt" />
             </button>
           )}
@@ -148,11 +160,12 @@ const Navbar = () => {
             >
               <div className="my-8 inline-block w-full max-w-md transform overflow-hidden rounded-lg bg-white p-6 text-left align-middle transition-all dark:bg-gray-900">
                 <Dialog.Title className="text-lg font-bold text-gray-900 dark:text-gray-100">
-                  Clear all tokens?
+                  {t('Clear all tokens?')}
                 </Dialog.Title>
                 <div className="mt-2">
                   <p className="text-sm text-gray-500">
-                    这是您进入私密文件夹的凭证，删除它后您可能需要重新输入密码以访问私密文件夹
+                    {t('These tokens are used to authenticate yourself into password protected folders, ') +
+                      t('clearing them means that you will need to re-enter the passwords again.')}
                   </p>
                 </div>
 
@@ -170,14 +183,14 @@ const Navbar = () => {
                     className="mr-3 inline-flex items-center justify-center space-x-2 rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300"
                     onClick={() => setIsOpen(false)}
                   >
-                    Cancel
+                    {t('Cancel')}
                   </button>
                   <button
                     className="inline-flex items-center justify-center space-x-2 rounded bg-red-500 px-4 py-2 text-white hover:bg-red-400 focus:outline-none focus:ring focus:ring-red-300"
                     onClick={() => clearTokens()}
                   >
                     <FontAwesomeIcon icon={['far', 'trash-alt']} />
-                    <span>Clear all</span>
+                    <span>{t('Clear all')}</span>
                   </button>
                 </div>
               </div>
