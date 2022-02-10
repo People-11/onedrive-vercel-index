@@ -62,7 +62,7 @@ const AudioPreview: FC<{ file: OdFileObject }> = ({ file }) => {
             </div>
 
             {!brokenThumbnail ? (
-              <div className="absolute m-4 rounded shadow-lg">
+              <div className="absolute rounded shadow-lg">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   className={`h-full w-full rounded object-cover object-top ${
