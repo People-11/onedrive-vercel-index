@@ -80,13 +80,13 @@ const DownloadButtonGroup: React.FC<{ downloadUrl: string }> = ({ downloadUrl })
           btnIcon="file-download"
           btnTitle={t('Download the file directly through OneDrive')}
         />
-        {/* <DownloadButton
+{/*     <DownloadButton
         onClickCallback={() => window.open(`/api/proxy?url=${encodeURIComponent(downloadUrl)}`)}
         btnColor="teal"
         btnText={t('Proxy download')}
         btnIcon="download"
         btnTitle={t('Download the file with the stream proxied through Vercel Serverless')}
-      /> */}
+        />*/}
         <DownloadButton
           onClickCallback={() => {
             clipboard.copy(`${getBaseUrl()}/api?path=${getReadablePath(asPath)}&raw=true`)
@@ -97,12 +97,12 @@ const DownloadButtonGroup: React.FC<{ downloadUrl: string }> = ({ downloadUrl })
           btnIcon="copy"
           btnTitle={t('Copy the permalink to the file to the clipboard')}
         />
-        <DownloadButton
+{/*     <DownloadButton
           onClickCallback={() => setMenuOpen(true)}
           btnColor="teal"
           btnText={t('Customise link')}
           btnIcon="pen"
-        />
+        />*/}
       </div>
     </>
   )
