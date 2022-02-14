@@ -25,10 +25,10 @@ const Navbar = () => {
   const [searchOpen, setSearchOpen] = useState(false)
   const openSearchBox = () => setSearchOpen(true)
 
-  useHotkeys(`${os === 'mac' ? 'cmd' : 'ctrl'}+k`, e => {
+{/*}  useHotkeys(`${os === 'mac' ? 'cmd' : 'ctrl'}+k`, e => {
     openSearchBox()
     e.preventDefault()
-  })
+  })*/}
 
   useEffect(() => {
     const storedToken = () => {
@@ -81,15 +81,15 @@ const Navbar = () => {
               <span className="text-sm font-medium">{t('Search ...')}</span>
             </div>
 
-            <div className="flex items-center space-x-1">
+            {/*<div className="flex items-center space-x-1">
               <div className="rounded-lg bg-gray-200 px-2 py-1 text-xs font-medium dark:bg-gray-700">
                 {os === 'mac' ? '⌘' : 'Ctrl'}
               </div>
               <div className="rounded-lg bg-gray-200 px-2 py-1 text-xs font-medium dark:bg-gray-700">K</div>
-            </div>
+            </div>*/}
           </button>
 
-          <SwitchLang />
+          {/*<SwitchLang />
 
           {siteConfig.links.length !== 0 &&
             siteConfig.links.map((l: { name: string; link: string }) => (
@@ -109,7 +109,7 @@ const Navbar = () => {
                   }
                 </span>
               </a>
-            ))}
+            ))}*/}
 
           {siteConfig.email && (
             <a href={siteConfig.email} className="flex items-center space-x-2 hover:opacity-80 dark:text-white">
