@@ -335,7 +335,7 @@ const FileListing: FC<{ query?: ParsedUrlQuery }> = ({ query }) => {
 
         {!onlyOnePage && (
           <div className="rounded-b bg-white dark:bg-gray-900 dark:text-gray-100">
-            <div className="border-b border-gray-200 p-3 text-center font-mono text-sm text-gray-400 dark:border-gray-700">
+            <div className="border-b border-gray-200 p-3 text-center text-sm text-gray-400 dark:border-gray-700">
               {t('- showing {{count}} page(s) ', {
                 count: size,
                 totalFileNum: isLoadingMore ? '...' : folderChildren.length,
