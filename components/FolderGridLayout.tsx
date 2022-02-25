@@ -47,7 +47,7 @@ const GridItem = ({ c, path }: { c: OdFolderChildren; path: string }) => {
         </span>
         <ChildName name={c.name} folder={Boolean(c.folder)} />
       </div>
-      <div className="truncate text-center text-xs text-gray-700 dark:text-gray-500">
+      <div className="truncate text-center font-mono text-xs text-gray-700 dark:text-gray-500">
         {formatModifiedDateTime(c.lastModifiedDateTime)}
       </div>
     </div>
