@@ -8,7 +8,7 @@ import { useTranslation } from 'next-i18next'
 
 import { getBaseUrl } from '../utils/getBaseUrl'
 import { humanFileSize, formatModifiedDateTime } from '../utils/fileDetails'
-
+import { getReadablePath } from '../utils/getReadablePath'
 import { Downloading, Checkbox, ChildIcon, ChildName } from './FileListing'
 import { getStoredToken } from '../utils/protectedRouteHandler'
 
@@ -108,7 +108,7 @@ const FolderListLayout = ({
                 title={t('Copy folder permalink')}
                 className="cursor-pointer rounded px-1.5 py-1 hover:bg-gray-300 dark:hover:bg-gray-600"
                 onClick={() => {
-                  clipboard.copy(`${getBaseUrl()}${`${path === '/' ? '' : path}/${encodeURIComponent(c.name)}`}`)
+                  clipboard.copy(`${getBaseUrl()}${getReadablePath(`${path === '/' ? '' : path}/${encodeURIComponent(c.name)}`)}`)
                   toast(t('Copied folder permalink.'), { icon: '👌' })
                 }}
               >
