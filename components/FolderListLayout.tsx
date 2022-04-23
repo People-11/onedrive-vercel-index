@@ -67,7 +67,7 @@ const FolderListLayout = ({
         <div className="hidden text-xs font-bold uppercase tracking-widest text-gray-600 dark:text-gray-300 md:block">
           {t('Actions')}
         </div>
-        <div className="hidden text-xs font-bold uppercase tracking-widest text-gray-600 dark:text-gray-300 md:block">
+{/*     <div className="hidden text-xs font-bold uppercase tracking-widest text-gray-600 dark:text-gray-300 md:block">
           <div className="hidden p-1.5 text-gray-700 dark:text-gray-400 md:flex">
             <Checkbox
               checked={totalSelected}
@@ -88,7 +88,7 @@ const FolderListLayout = ({
               </button>
             )}
           </div>
-        </div>
+        </div>*/}
       </div>
 
       {folderChildren.map((c: OdFolderChildren) => (
@@ -150,7 +150,7 @@ const FolderListLayout = ({
               </a>
             </div>
           )}
-          <div className="hidden p-1.5 text-gray-700 dark:text-gray-400 md:flex">
+{/*       <div className="hidden p-1.5 text-gray-700 dark:text-gray-400 md:flex">
             {!c.folder && !(c.name === '.password') && (
               <Checkbox
                 checked={selected[c.id] ? 2 : 0}
@@ -158,7 +158,7 @@ const FolderListLayout = ({
                 title={t('Select file')}
               />
             )}
-          </div>
+          </div>*/}
         </div>
       ))}
     </div>
