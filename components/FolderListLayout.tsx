@@ -135,7 +135,7 @@ const FolderListLayout = ({
                 title={t('Copy raw file permalink')}
                 className="cursor-pointer rounded px-1.5 py-1 hover:bg-gray-300 dark:hover:bg-gray-600"
                 onClick={() => {
-                  clipboard.copy(`${getBaseUrl()}${getReadablePath(`${path === '/' ? '' : path}/${encodeURIComponent(c.name)}`)}`)
+                  clipboard.copy(`${getBaseUrl()}/api/raw/?path=${getItemPath(c.name))}`)
                   toast.success(t('Copied raw file permalink.'))
                 }}
               >
