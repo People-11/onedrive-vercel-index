@@ -11,7 +11,7 @@ const PDFEmbedPreview: React.FC<{ file: any }> = ({ file }) => {
   const pdfPath = encodeURIComponent(
     `${getBaseUrl()}/api/raw/?path=${asPath}${hashedToken ? `&odpt=${hashedToken}` : ''}`
   )
-  const url = `https://pdf-for-onedrive.vercel.app/?file=${pdfPath}`
+  const url = `https://pdf-preview-fix.vercel.app/?file=${pdfPath}`
 
   return (
     <div>
