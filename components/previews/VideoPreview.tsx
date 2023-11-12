@@ -146,13 +146,13 @@ const VideoPreview: FC<{ file: OdFileObject }> = ({ file }) => {
             btnColor="teal"
             btnText={t('Customise link')}
             btnIcon="pen"
-          />
+          />*/}
 
           <DownloadButton
             onClickCallback={() => window.open(`iina://weblink?url=${getBaseUrl()}${videoUrl}`)}
             btnText="IINA"
             btnImage="/players/iina.png"
-          />*/}
+          />
           <DownloadButton
             onClickCallback={() => window.open(`vlc://${getBaseUrl()}${videoUrl}`)}
             btnText="VLC"
